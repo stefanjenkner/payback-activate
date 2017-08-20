@@ -53,7 +53,7 @@ def main():
 
 def get_browser():
     # use environment variables for connecting to linked services (deprecated)
-    if os.environ.has_attr('SELENIUM_PORT_4444_TCP_ADDR') and os.environ.has_attr('SELENIUM_PORT_4444_TCP_PORT'):
+    if 'SELENIUM_PORT_4444_TCP_ADDR' in os.environ and 'SELENIUM_PORT_4444_TCP_PORT' in os.environ:
         selenium_host = os.environ.get('SELENIUM_PORT_4444_TCP_ADDR')
         selenium_port = os.environ.get('SELENIUM_PORT_4444_TCP_PORT')
         return webdriver.Remote(command_executor='http://{}:{}/wd/hub'.format(selenium_host, selenium_port),
