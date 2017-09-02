@@ -2,6 +2,8 @@
 
 Automatisiert die Aktivierung von [Payback eCoupons](https://www.payback.de) via Selenium und Docker.
 
+[![Dependency Status](https://gemnasium.com/badges/github.com/sedden/payback-activate.svg)](https://gemnasium.com/github.com/sedden/payback-activate)
+
 **Schritt 1:** Erstellen der `docker-compose.yml` mit folgendem Inhalt:
 
     selenium:
