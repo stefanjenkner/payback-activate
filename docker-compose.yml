@@ -1,0 +1,6 @@
+selenium:
+  image: selenium/standalone-firefox:3.4.0
+payback_activate:
+  build: .
+  links:
+    - selenium:selenium

@@ -4,14 +4,9 @@ Automatisiert die Aktivierung von [Payback eCoupons](https://www.payback.de) via
 
 [![Dependency Status](https://gemnasium.com/badges/github.com/sedden/payback-activate.svg)](https://gemnasium.com/github.com/sedden/payback-activate)
 
-**Schritt 1:** Erstellen der `docker-compose.yml` mit folgendem Inhalt:
+**Schritt 1:** Erstellen der `docker-compose.override.yml` mit folgendem Inhalt:
 
-    selenium:
-      image: selenium/standalone-firefox:3.4.0
     payback_activate:
-      build: .
-      links:
-        - selenium:selenium
       environment:
         - PAYBACK_USERNAME=me@example.com
         - PAYBACK_PASSWORD=topsecret
