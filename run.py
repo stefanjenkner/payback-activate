@@ -24,11 +24,10 @@ def main():
     browser = get_browser()
 
     # login
-    browser.get('https://www.payback.de/pb/authenticate/id/713416/#loginSecureTab')
-    browser.find_element_by_xpath('//a[@id="loginSecureTabLink"]').click()
+    browser.get('https://www.payback.de/login')
     browser.find_element_by_xpath('//input[@id="aliasInputSecure"]').send_keys(payback_username)
     browser.find_element_by_xpath('//input[@id="passwordInput"]').send_keys(payback_password)
-    browser.find_element_by_xpath('//input[@id="loginSubmitButtonSecure"]').click()
+    browser.find_element_by_xpath('//button[@id="loginSubmitButtonSecure"]').click()
 
     # open couponcenter
     WebDriverWait(browser, 10).until(lambda x: x.find_element_by_xpath('//a[@href="/pb/couponcenter/id/68726/"]')).click()
