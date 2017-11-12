@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 import time
 
 from selenium import webdriver
@@ -33,21 +34,25 @@ def main():
     WebDriverWait(browser, 10).until(lambda x: x.find_element_by_xpath('//a[@href="/pb/couponcenter/id/68726/"]')).click()
 
     # check for coupons
+    counter = 0
     try:
         WebDriverWait(browser, 10).until(lambda x: x.find_element_by_xpath(XPATH_JETZT_AKTIVIEREN))
+
+        # activate coupons
+        for element in browser.find_elements_by_xpath(XPATH_JETZT_AKTIVIEREN):
+            try:
+                element.click()
+                counter = counter + 1
+            except ElementNotInteractableException:
+                continue
+
     except TimeoutException:
-        browser.close()
+        # no coupons found
         return
 
-    # activate coupons
-    for element in browser.find_elements_by_xpath(XPATH_JETZT_AKTIVIEREN):
-        try:
-            element.click()
-        except ElementNotInteractableException:
-            continue
-
-    # quit
-    browser.close()
+    finally:
+        print("Coupons activated: {}".format(counter), file=sys.stderr)
+        browser.close()
 
 
 def get_browser():

@@ -18,3 +18,7 @@ Automatisiert die Aktivierung von [Payback eCoupons](https://www.payback.de) via
 **Schritt 3:** Ausführung
 
     docker-compose run payback_activate && docker-compose stop selenium
+
+    Starting paybackactivate_selenium_1 ... done
+    Coupons activated: 6
+    Stopping paybackactivate_selenium_1 ... done
