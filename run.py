@@ -31,7 +31,7 @@ def main():
     browser.find_element_by_xpath('//button[@id="loginSubmitButtonSecure"]').click()
 
     # open couponcenter
-    WebDriverWait(browser, 10).until(lambda x: x.find_element_by_xpath('//a[@href="/pb/couponcenter/id/68726/"]')).click()
+    WebDriverWait(browser, 20).until(lambda x: x.find_element_by_xpath('//a[@href="/pb/couponcenter/id/68726/"]')).click()
 
     # check for coupons
     counter = 0
@@ -62,8 +62,11 @@ def get_browser():
         selenium_port = os.environ.get('SELENIUM_PORT_4444_TCP_PORT')
         return webdriver.Remote(command_executor='http://{}:{}/wd/hub'.format(selenium_host, selenium_port),
                                 desired_capabilities=DesiredCapabilities.FIREFOX)
+
     # fallback
-    return webdriver.Firefox()
+    firefox_options = webdriver.firefox.options.Options()
+    firefox_options.add_argument('--headless')
+    return webdriver.Firefox(firefox_options=firefox_options)
 
 if __name__ == '__main__':
     main()

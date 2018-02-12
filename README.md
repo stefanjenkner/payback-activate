@@ -11,11 +11,22 @@ Automatisiert die Aktivierung von [Payback eCoupons](https://www.payback.de) via
         - PAYBACK_USERNAME=me@example.com
         - PAYBACK_PASSWORD=topsecret
 
-**Schritt 2:** Docker Image bauen
+    payback_activate_standalone:
+      environment:
+        - PAYBACK_USERNAME=me@example.com
+        - PAYBACK_PASSWORD=topsecret
+
+**Schritt 2:** Docker Images bauen
 
     docker-compose build
 
-**Schritt 3:** Ausführung
+**Schritt 3a:** Ausführung payback_activate_standalone via headless Firefox
+
+    docker-compose run payback_activate_standalone
+
+    Coupons activated: 6
+
+**Schritt 3b:** Ausführung via payback_activate via remote WebDriver (linked Container)
 
     docker-compose run payback_activate && docker-compose stop selenium
 
