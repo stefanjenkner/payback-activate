@@ -1,12 +1,3 @@
-selenium:
-  image: selenium/standalone-firefox:3.4.0
-
 payback_activate:
   build: .
-  dockerfile: Dockerfile.payback_activate
-  links:
-    - selenium:selenium
-
-payback_activate_standalone:
-  build: .
-  dockerfile: Dockerfile.payback_activate_standalone
+  dockerfile: Dockerfile

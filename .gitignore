@@ -4,3 +4,4 @@ venv/
 *.log
 
 docker-compose.override.yml
+*.sh

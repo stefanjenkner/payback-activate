@@ -1,1 +1,7 @@
 venv/
+.idea/
+.vscode/
+*.log
+
+*.sh
+docker-compose.*

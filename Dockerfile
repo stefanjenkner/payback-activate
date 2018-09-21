@@ -6,7 +6,6 @@ USER seluser
 
 WORKDIR /home/seluser
 RUN virtualenv -p python3.5 venv
-#RUN source venv/bin/activate
 COPY requirements.txt ./
 RUN venv/bin/pip install --no-cache-dir -r requirements.txt
 
