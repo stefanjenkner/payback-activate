@@ -1,7 +1,2 @@
-venv/
-.idea/
-.vscode/
-*.log
-
-docker-compose.override.yml
-*.sh
+/node_modules
+.env

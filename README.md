@@ -1,22 +1,16 @@
 # README
 
-Automatisiert das Aktivieren von [Payback eCoupons](https://www.payback.de) via Selenium und Docker.
+Aktiviert automatisch alle [Payback eCoupons](https://www.payback.de).
 
-[![Known Vulnerabilities](https://snyk.io/test/github/sedden/payback-activate/badge.svg?targetFile=requirements.txt)](https://snyk.io/test/github/sedden/payback-activate?targetFile=requirements.txt)
+**Schritt 1:** Abhängigkeiten installieren:
 
-**Schritt 1:** Erstellen der `docker-compose.override.yml` mit folgendem Inhalt:
+    npm install
 
-    payback_activate:
-      environment:
-        - PAYBACK_USERNAME=me@example.com
-        - PAYBACK_PASSWORD=topsecret
+**Schritt 2:** Setzen der Environment Variablen:
 
-**Schritt 2:** Docker Images bauen
+    export PAYBACK_USERNAME=me@example.com
+    export PAYBACK_PASSWORD=topsecret
 
-    docker-compose build
+**Schritt 3:** Start Automatisierung (via Chrome)
 
-**Schritt 3:** Ausführung payback_activate via headless Firefox
-
-    docker-compose run payback_activate
-
-    Account: me@example.com, Coupons activated: 6
+    npm run wdio

@@ -1,3 +1,0 @@
-payback_activate:
-  build: .
-  dockerfile: Dockerfile
