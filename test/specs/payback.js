@@ -12,6 +12,7 @@ describe('Payback Activate', () => {
         // consent
         await expect($('#onetrust-consent-sdk')).toBeExisting();
         await $('#onetrust-accept-btn-handler').click();
+        await browser.pause(1000);
 
         // login
         const usernameInput = await $('#aliasInputSecure');
