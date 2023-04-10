@@ -20,24 +20,20 @@ This script automatically logs in to your Payback account and activates availabl
 set PAYBACK_USERNAME=your_username
 set PAYBACK_PASSWORD=your_password
 
-shell
-Copy code
 
 ### Windows (PowerShell)
 
 $env:PAYBACK_USERNAME="your_username"
 $env:PAYBACK_PASSWORD="your_password"
 
-shell
-Copy code
+
 
 ### Linux and macOS
 
 export PAYBACK_USERNAME=your_username
 export PAYBACK_PASSWORD=your_password
 
-sql
-Copy code
+
 
 ## Running the Script
 
@@ -45,8 +41,6 @@ With the environment variables set, you can now run the script:
 
 npm run wdio
 
-sql
-Copy code
 
 This command will start the script, which will perform the following steps:
 
