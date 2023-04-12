@@ -16,8 +16,7 @@ describe('Payback Activate', () => {
         // Consent
         await expect($(ONE_TRUST_CONSENT_SDK_SELECTOR)).toBeExisting();
         await $(ONE_TRUST_ACCEPT_BTN_HANDLER_SELECTOR).click();
-	await browser.pause(1000);
-        
+        await browser.pause(1000);
 
         // Log in
         const usernameInput = await $('#aliasInputSecure');
@@ -31,7 +30,7 @@ describe('Payback Activate', () => {
         await passwordInput.setValue(process.env.PAYBACK_PASSWORD);
 
         const loginButton = await $('#loginSubmitButtonSecure');
-    	await loginButton.click();
+        await loginButton.click();
 
 
         // Verify
