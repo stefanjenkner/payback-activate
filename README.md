@@ -1,18 +1,20 @@
 # Payback Coupon Activation Script
 
-This script automatically logs in to your Payback account and activates available coupons. The script uses WebdriverIO to automate the process.
+This script automatically logs in to your Payback account and activates available coupons. The script uses [WebdriverIO](https://webdriver.io) to automate the process.
 
 ## Quick start using Docker container
 
-The containerized version run headless Chromium:
+The containerized version runs Chromium headless:
 
 **Step 1:** Create file `docker-compose.override.yml` with:
 
 ```
-payback_activate:
-  environment:
-    - PAYBACK_USERNAME=your_username
-    - PAYBACK_PASSWORD=your_password
+version: '3'
+services:
+  payback_activate:
+    environment:
+      - PAYBACK_USERNAME=your_username
+      - PAYBACK_PASSWORD=your_password
 ```
 
 **Step 2:** Build image via:
