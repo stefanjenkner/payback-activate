@@ -2,40 +2,72 @@
 
 This script automatically logs in to your Payback account and activates available coupons. The script uses WebdriverIO to automate the process.
 
-## Prerequisites
+## Quick start using Docker container
+
+The containerized version run headless Chromium:
+
+**Step 1:** Create file `docker-compose.override.yml` with:
+
+```
+payback_activate:
+  environment:
+    - PAYBACK_USERNAME=your_username
+    - PAYBACK_PASSWORD=your_password
+```
+
+**Step 2:** Build image via:
+
+```
+docker compose build
+```
+
+**Step 3:** Run container `payback_activate` via:
+
+```
+docker compose run payback_activate
+```
+
+## Contribute and run manually
+
+### Prerequisites
 
 1. Node.js (v14 or later) and npm installed on your system.
 2. WebdriverIO and its required dependencies installed in your project folder.
 
-## Setup
+### Setup
 
 1. Clone or download the repository containing the script and the `package.json` file.
 2. Open a terminal (Command Prompt on Windows) and navigate to the project folder.
 3. Run `npm install` to install the required dependencies.
 4. Set the `PAYBACK_USERNAME` and `PAYBACK_PASSWORD` environment variables with your Payback account credentials:
 
-### Windows (Command Prompt)
+#### Windows (Command Prompt)
    
-`set PAYBACK_USERNAME=your_username`
-`set PAYBACK_PASSWORD=your_password`
+```
+set PAYBACK_USERNAME=your_username
+set PAYBACK_PASSWORD=your_password
+```
 
-### Windows (PowerShell)
+#### Windows (PowerShell)
 
-`$env:PAYBACK_USERNAME="your_username"`
-`$env:PAYBACK_PASSWORD="your_password"`
+```
+$env:PAYBACK_USERNAME="your_username"
+$env:PAYBACK_PASSWORD="your_password"
+```
 
+#### Linux and macOS
+```
+export PAYBACK_USERNAME=your_username
+export PAYBACK_PASSWORD=your_password
+```
 
-### Linux and macOS
-`export PAYBACK_USERNAME=your_username`
-`export PAYBACK_PASSWORD=your_password`
-
-
-## Running the Script
+### Running the Script
 
 With the environment variables set, you can now run the script:
 
-`npm run wdio`
-
+```
+npm run wdio
+```
 
 This command will start the script, which will perform the following steps:
 
