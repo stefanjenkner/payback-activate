@@ -1,5 +1,5 @@
 {
-  "name": "my-new-project",
+  "name": "payback-activate",
   "type": "module",
   "devDependencies": {
     "@wdio/cli": "^8.3.8",
