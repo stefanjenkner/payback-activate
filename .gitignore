@@ -1,3 +1,4 @@
-/node_modules
-.env
-docker-compose.override.yml
+/node_modules/
+
+/.env
+/docker-compose.override.yml
