@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:20.2.0-alpine
 
 RUN apk add --no-cache chromium chromium-chromedriver
 
