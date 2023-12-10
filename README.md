@@ -1,3 +1,5 @@
+(!) Warning - this automation is broken since Payback introduced reCaptcha see https://github.com/stefanjenkner/payback-activate/issues/28 (!)
+
 # Payback Coupon Activation Script
 
 This script automatically logs in to your Payback account and activates available coupons. The script uses [WebdriverIO](https://webdriver.io) to automate the process.
